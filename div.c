@@ -8,7 +8,7 @@
  * Description: The result is stored in the second top element of the stack,
  * and the top element is removed.
  */
-void div(stack_t **stack, unsigned int line_number)
+void divi(stack_t **stack, unsigned int line_number)
 {
 	stack_t *local_stack;
 
