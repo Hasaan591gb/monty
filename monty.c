@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 					{"pint", pint}, {"pop", pop},
 					{"swap", swap}, {"add", add},
 					{"nop", nop}, {"sub", sub},
-					{NULL, NULL}};
+					{"div", div}, {NULL, NULL}};
 
 	if (argc != 2)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 
-		for (i = 1; i < 8; i++)
+		for (i = 1; instructions[i].opcode; i++)
 		{
 			if (strcmp(command, instructions[i].opcode) == 0)
 			{
@@ -65,7 +65,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-		if (i == 8)
+		if (i == 9)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 			exit(EXIT_FAILURE);
