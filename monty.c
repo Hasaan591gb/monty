@@ -21,7 +21,8 @@ int main(int argc, char **argv)
 	instruction_t instructions[] = {{"push", push}, {"pall", pall},
 					{"pint", pint}, {"pop", pop},
 					{"swap", swap}, {"add", add},
-					{"nop", nop}, {NULL, NULL}};
+					{"nop", nop}, {"sub", sub},
+					{NULL, NULL}};
 
 	if (argc != 2)
 	{
@@ -55,7 +56,7 @@ int main(int argc, char **argv)
 			continue;
 		}
 
-		for (i = 1; i < 7; i++)
+		for (i = 1; i < 8; i++)
 		{
 			if (strcmp(command, instructions[i].opcode) == 0)
 			{
@@ -64,7 +65,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-		if (i == 7)
+		if (i == 8)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 			exit(EXIT_FAILURE);
