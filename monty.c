@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		command = strtok(line, " \n");
-		if (command == NULL)
+		if (command == NULL || command[0] == '#')
 			continue;
 		if (strcmp(command, "push") == 0)
 		{
