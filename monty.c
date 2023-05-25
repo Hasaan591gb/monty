@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 					{"swap", swap}, {"add", add},
 					{"nop", nop}, {"sub", sub},
 					{"div", divi}, {"mul", multi},
-					{NULL, NULL}};
+					{"mod", modu}, {NULL, NULL}};
 
 	if (argc != 2)
 	{
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-		if (i == 10)
+		if (i == 11)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 			exit(EXIT_FAILURE);
