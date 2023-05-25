@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 					{"nop", nop}, {"sub", sub},
 					{"div", divi}, {"mul", multi},
 					{"mod", modu}, {"pchar", pchar},
-					{NULL, NULL}};
+					{"pstr", pstr}, {NULL, NULL}};
 
 	if (argc != 2)
 	{
@@ -67,7 +67,7 @@ int main(int argc, char **argv)
 			}
 		}
 
-		if (i == 12)
+		if (i == 13)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, command);
 			exit(EXIT_FAILURE);
