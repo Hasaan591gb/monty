@@ -1,6 +1,19 @@
+queue
 push 1
 push 2
-push 10
 push 3
-sub
+pall
+stack
+    
+push 4
+push 5 dfdh
+   # wfbsjbsbfs sklnfsnfs
+push 6
+pall
+add
+
+pall
+queue
+push 11111
+add
 pall
