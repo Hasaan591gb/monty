@@ -10,6 +10,7 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *local_stack;
+	stack_t *tmp = *stack;
 
 	local_stack = malloc(sizeof(stack_t));
 	if (local_stack == NULL)
@@ -25,8 +26,19 @@ void push(stack_t **stack, unsigned int line_number)
 		*stack = local_stack;
 	else
 	{
-		(*stack)->prev = local_stack;
-		local_stack->next = *stack;
-		*stack = local_stack;
+		if (inout.status == 0)
+		{
+			(*stack)->prev = local_stack;
+			local_stack->next = *stack;
+			*stack = local_stack;
+		}
+		else if (inout.status == 1)
+		{
+			while (tmp->next != NULL)
+				tmp = tmp->next;
+
+			tmp->next = local_stack;
+			local_stack->prev = tmp;
+		}
 	}
 }
