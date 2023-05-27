@@ -2,6 +2,8 @@
 
 void free_stack(stack_t *head);
 
+inout_t inout = {0};
+
 /**
  * main - entry point for monty interpreter
  * @argc: number of command line arguments
@@ -46,6 +48,16 @@ int main(int argc, char **argv)
 		command = strtok(line, " \n");
 		if (command == NULL || command[0] == '#')
 			continue;
+		if (strcmp(command, "stack") == 0)
+		{
+			inout.status = 0;
+			continue;
+		}
+		if (strcmp(command, "queue") == 0)
+		{
+			inout.status = 1;
+			continue;
+		}
 		if (strcmp(command, "push") == 0)
 		{
 			int_str = strtok(NULL, " \n");
