@@ -38,6 +38,18 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct inout_s - structure definition for inout
+ * @status: status variable 1 if queue 0 if stack
+ *
+ * Description: This structure defines the inout variable
+ */
+typedef struct inout_s
+{
+	int status;
+} inout_t;
+extern inout_t inout;
+
 void free_stack(stack_t *head);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
